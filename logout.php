@@ -1,0 +1,9 @@
+<?php
+	session_start();
+	session_unset($_SESSION['username']);
+	session_destroy(); 
+	if($_SESSION['username']==""){
+		$referedurl=$_SERVER['HTTP_REFERER'];
+		header("Location:$referedurl");
+	}
+?>
